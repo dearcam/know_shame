@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowShame.org — A Prayer Against Shame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #000000;
+            --text: #ffffff;
+            --accent: #cccccc;
+            --quote-border: #444444;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .title {
+            text-align: center;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            font-size: 64px;
+            margin: 100px 100px 0;
+            animation: fadeIn 1s ease-out 0.1s both;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-top: 60px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-top: 0;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        h2 {
+            font-size: 36px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 400;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        p {
+            margin-bottom: 24px;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .poem {
+            border-left: 2px solid var(--quote-border);
+            padding-left: 32px;
+            margin: 48px 0;
+            font-style: italic;
+            color: var(--accent);
+            line-height: 1.9;
+            animation: fadeIn 1s ease-out 0.7s both;
+            text-align: center;
+        }
+
+        .poem-title {
+            font-weight: 500;
+            font-style: normal;
+            margin-bottom: 12px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        blockquote {
+            border-left: 2px solid var(--quote-border);
+            padding-left: 32px;
+            margin: 40px 0;
+            font-style: italic;
+            color: var(--accent);
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 12px;
+            font-style: normal;
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        strong {
+            font-weight: 500;
+        }
+
+        .welcome {
+            font-size: 21px;
+            margin: 60px 0 40px;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .tagline {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .list-prose {
+            margin-left: 0;
+            list-style: none;
+        }
+
+        .list-prose li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .list-prose li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .callout {
+            border: 1px solid var(--quote-border);
+            padding: 48px 40px;
+            margin: 80px 0;
+            text-align: center;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+        .callout h1 {
+            font-size: 32px;
+            margin: 0 0 24px;
+        }
+
+        .callout p {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        .tally-embed {
+            margin-top: 80px;
+            border-top: 1px solid var(--quote-border);
+            padding-top: 60px;
+            animation: fadeIn 1s ease-out 1.2s both;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            min-height: 600px;
+            corner-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 48px 20px 80px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            body {
+                font-size: 16px;
+            }
+
+            .poem, blockquote {
+                padding-left: 24px;
+            }
+
+            .callout {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+    <script>
+        <script async src="https://tally.so/widgets/embed.js"></script>
+    </script>
+</head>
+<body>
+<div class="title"
+        h1>KnowShame.org
+    </div>
+    <div class="container">
+        <div class="poem">
+            To go in the dark with a light is to know the light.<br>
+            To know dark, go dark—go without sight.<br>
+            And find that the dark, too, blooms and sings<br>
+            and is traveled by dark feet and dark wings.<br>
+            <br>
+            <cite>—Wendell Berry</cite>
+        </div>
+
+        <div class="welcome">
+            <p>To those dark places in you, the ones you might rather not know: welcome.</p>
+            <p>Come! Pull up a chair.</p>
+            <p>Join us in the light.</p>
+        </div>
+
+        <p class="tagline">KnowShame.org is a prayer—one man's attempt to yell out through a loudspeaker an answer to the shame that contorts us, divides us, and pushes us into silence.</p>
+
+        <p>My journey with shame is long and familiar.</p>
+
+        <p>"I'm disgusting."<br>
+        "I have no friends."<br>
+        "If anyone really knew me, they sure wouldn't like what they see."</p>
+
+        <p>And sometimes, regrettably, these voices run the show. I avert my eyes from a loving gaze—"don't come over here, it's so foul. I don't want to taint you, too."</p>
+
+        <p>I've hurt people with my refusal to let them love me.</p>
+
+        <p>But I'm not damaged goods, and neither are you.</p>
+
+        <blockquote>
+            We—each of us—arrives fully loaded, elders in training.
+            <cite>— Malidoma Somé</cite>
+        </blockquote>
+
+        <h2>Why "KnowShame"?</h2>
+        <p>It's a play on words. It sounds like "no shame," which is true. Say no to shame. Say no to shaming behavior and language.</p>
+
+        <p>Yet it also acknowledges that to heal from shame requires bringing into the light. You can't just "get over" it, you have to know it.</p>
+
+        <p>It's like that old kids' tale:<br>
+        Can't go under it.<br>
+        Can't go over it.<br>
+        Have to go <em>through</em> it.</p>
+
+        <p>So it is with shame: we have to go through it, and we cannot do that alone.</p>
+
+        <p>So get to know shame, yours and others.</p>
+
+        <h2>My vision</h2>
+        
+        <h3>A grand vision of collective transformation</h3>
+        <p>My hope for this prayer is simple and ambitious: to invite conversation about shame—first inward, then outward, then together.</p>
+
+        <p>Brené Brown's work names something many of us have felt but rarely articulated: shame thrives in silence, secrecy, and isolation. When spoken—carefully, relationally, humanly—it begins to lose its grip.</p>
+
+        <p>But this work reaches beyond personal healing.</p>
+
+        <p>Shame is not just an individual wound. It is one of the primary ways systems of domination sustain themselves. White supremacy, colonialism, patriarchy—these forces don't rely only on laws or violence. They rely on shame lodged deep in the body: <em>you are too much, not enough, dangerous, defective, replaceable.</em></p>
+
+        <p>When shame goes unnamed, it turns inward as self-erasure—or outward as blame, punishment, and control.</p>
+
+        <p>Communities fracture.<br>
+        Movements devour themselves.<br>
+        Power simply changes costumes.</p>
+
+        <p>Indeed, some might even say, "fuck shame." (More on that below).</p>
+
+        <p>Tending our shame interrupts these negative, toxic cycles.</p>
+
+        <p>As we learn to stay present with our own shame, we grow the capacity to stay present with discomfort, difference, and repair. We become less reactive, less brittle, less attached to false innocence or superiority. We learn how to be accountable without collapsing, and how to belong without pretending.</p>
+
+        <p>Collective freedom emerges when people can remain in relationship—<em>especially</em> when things get hard. Shame work restores that possibility.</p>
+
+        <p>It returns us to grief that has been frozen.</p>
+
+        <p>It softens identities built on fear.</p>
+
+        <p>It loosens the hold of inherited harm so it is not passed on untouched.</p>
+
+        <p>To know shame—rather than be driven by it—is to reclaim dignity. And dignity, shared and practiced, is quietly revolutionary.</p>
+
+        <h2>The full story of KnowShame—"FUCK SHAME"</h2>
+        <p>Many years back a mentor, guide, and grandfather figure of mine, Michael Sherlock, said a prayer for shame that has stuck with me. (This comes through Michael from Martin Lazoff):</p>
+
+        <blockquote>
+            Fuck shame! I am somebody!
+        </blockquote>
+
+        <p>This is what I want to send out into the world. "People," I'm ready to scream. "It is time we move on from the shame!"</p>
+
+        <p>The profanity summons anger. Anger is action, energetic protection, safe boundaries.</p>
+
+        <p>The word "fuck" for some people can help them to jump out of a frozen place and activate toward healing. And the reminder that you matter.</p>
+
+        <p>"You matter!"</p>
+
+        <h2>A specific, ordinary vision</h2>
+        <p>As I've carried Martin's profane prayer around over the years I've had the same image again and again: that message everywhere, sparking conversation.</p>
+
+        <p>On water bottles.<br>
+        On bike frames.<br>
+        On notebooks and toolboxes and coffee mugs.</p>
+
+        <p>Friends I love pulling on soft, well-made hoodies—embroidered, not flashy—quietly and unmistakably saying:</p>
+
+        <p><em>Fuck shame.</em><br>
+        <em>KnowShame.</em><br>
+        <em>No to shame.</em></p>
+
+        <p>A prayer you can wear.</p>
+
+       
+<div class="callout">
+    <h1>
+        If this resonates...
+    </h1>
+    <p>I'd like to make this real and I'd like your feedback.
+    </p>     
+    <div class="tally-embed">
+        <iframe src="https://tally.so/embed/Ek5zDq?alignLeft=1&hideTitle=1&dynamicHeight=1">
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="KnowShame"
+        </iframe>
+    </div>
+    </div>
+</body>
+</html>
