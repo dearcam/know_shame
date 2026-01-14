@@ -6,7 +6,7 @@
     <title>KnowShame.org — A Prayer Against Toxic Shame</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,22 +15,23 @@
         }
 
         :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --accent: #cccccc;
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #414040;
             --quote-border: #444444;
         }
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Work Sans', sans-serif;
-            font-weight: 300;
-            line-height: 1.8;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        body {  
+    background: var(--bg);
+    color: #111;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;          /* heavier = more readable */
+    line-height: 1.7;         /* slightly tighter */
+    font-size: 18px;          /* up from 17 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
         }
+
         .aboutme {
             max-width: 960px; 
             margin: 120px auto;
@@ -44,11 +45,34 @@
             font-size: 32px;
             margin-bottom: 32px;
         }
+         /* Dynamic Logo Header */
+        .logo-header {
+            text-align: center;
+            padding: 100px 24px 60px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 10vw, 72px);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            display: inline-block;
+        }
+
+        .logo .highlight {
+            font-weight: 900;
+        }
+
+        .logo .domain {
+            color: var(--accent);
+            font-weight: 400;
+        }
+
         .container {
-            max-width: 680px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 80px 24px 120px;
-            animation: fadeIn 0.8s ease-out;
+            padding: 0 24px 120px;
         }
 
         @keyframes fadeIn {
@@ -72,7 +96,7 @@
 
         h1, h2, h3 {
             font-family: 'Crimson Pro', serif;
-            font-weight: 300;
+            font-weight: 500;
             letter-spacing: -0.02em;
             margin-top: 60px;
             margin-bottom: 24px;
@@ -82,23 +106,23 @@
         h1 {
             font-size: 48px;
             margin-top: 0;
-            animation: fadeIn 1s ease-out 0.2s both;
         }
 
         h2 {
             font-size: 36px;
-            animation: fadeIn 1s ease-out 0.4s both;
+            margin-top: 80px;
+            border-top: 1px solid #eee;
+            padding-top: 48px;
         }
 
         h3 {
             font-size: 28px;
             font-weight: 400;
-            animation: fadeIn 1s ease-out 0.5s both;
         }
 
         p {
-            margin-bottom: 24px;
-            animation: fadeIn 1s ease-out 0.6s both;
+            margin-bottom: 28px;
+            max-width: 60ch;
         }
 
         .poem {
@@ -108,7 +132,6 @@
             font-style: italic;
             color: var(--accent);
             line-height: 1.9;
-            animation: fadeIn 1s ease-out 0.7s both;
             text-align: center;
         }
 
@@ -122,13 +145,14 @@
         }
 
         blockquote {
-            border-left: 2px solid var(--quote-border);
-            padding-left: 32px;
+            border-left: 3px solid #ddd;
+            padding-left: 24px;
             margin: 40px 0;
             font-style: italic;
             color: var(--accent);
             font-size: 19px;
             line-height: 1.7;
+            color: #333
         }
 
         blockquote cite {
@@ -209,10 +233,13 @@
             border: none;
             width: 100%;
             min-height: 600px;
-            corner-radius: 8px;
+            border-radius: 8px;
         }
 
         @media (max-width: 768px) {
+            .logo-header {
+                padding: 60px 20px 40px;
+            }
             .container {
                 padding: 48px 20px 80px;
             }
@@ -245,7 +272,10 @@
     <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
-    <h1 class="title">KnowShame.org</h1>
+   <!-- Dynamic Logo Header -->
+    <header class="logo-header">
+        <div class="logo">k<span class="highlight">no</span>wshame<span class="domain">.org</span></div>
+    </header>
     <div class="container">
         <div class="poem">
             To go in the dark with a light is to know the light.<br>
@@ -262,9 +292,8 @@
             <p>Join us in the light.</p>
         </div>
 
-        <p class="tagline">KnowShame.org is a prayer—one man's attempt to yell out through a loudspeaker an answer to the shame that contorts us, divides us, and pushes us into silence.</p>
-
-        <p>My journey with shame is long and familiar.</p>
+        <h2>Welcome—what is "knowshame"?</h2>
+        <p>My journey with shame is long and familiar. It sounds like:</p>
 
         <p>"I'm disgusting."<br>
         "I have no friends."<br>
@@ -281,10 +310,10 @@
             <cite>— Malidoma Somé</cite>
         </blockquote>
 
-        <h2>Why "KnowShame"?</h2>
+        <h2>Why "knowshame"?</h2>
         <p>It's a play on words. It sounds like "no shame," which is true. Say no to shame. Say no to shaming behavior and language.</p>
 
-        <p>Yet it also acknowledges that to heal from shame requires bringing into the light. You can't just "get over" it, you have to know it.</p>
+        <p>It also acknowledges that to heal from shame requires bringing into the light. You can't just "get over" it, you have to know it.</p>
 
         <p>It's like that old kids' tale:<br>
         Can't go under it.<br>
@@ -295,40 +324,18 @@
 
         <p>So get to know shame, yours and others.</p>
 
-        <h2>My vision</h2>
-        
-        <h3>A grand vision of collective transformation</h3>
-        <p>My hope for this prayer is simple and ambitious: to invite conversation about shame—first inward, then outward, then together.</p>
+        <h2>My vision:</h2>
+        <h3><i>A world without toxic shame</i></h3>
+        <p>Toxic shame does no good. It corrodes our sense of worth, belonging, and dignity. It drives us to hide, to withdraw, to lash out. It makes us small, brittle, and afraid.</p>
 
-        <p>Brené Brown's work names something many of us have felt but rarely articulated: shame thrives in silence, secrecy, and isolation. When spoken—carefully, relationally, humanly—it begins to lose its grip.</p>
+        <p>It's not just an individual wound. It is one of the primary ways systems of domination sustain themselves.</p>
+        <p>White supremacy, colonialism, patriarchy—these forces don't rely only on laws or violence. They rely on shame lodged deep in the body: <em>you are too much, not enough, dangerous, defective, replaceable.</em></p>
 
-        <p>But this work reaches beyond personal healing.</p>
+        <p> Toxic shame breaks down the bonds of community.</p>
 
-        <p>Shame is not just an individual wound. It is one of the primary ways systems of domination sustain themselves. White supremacy, colonialism, patriarchy—these forces don't rely only on laws or violence. They rely on shame lodged deep in the body: <em>you are too much, not enough, dangerous, defective, replaceable.</em></p>
+        <p>Indeed, some might even say, "fuck shame."</p>
 
-        <p>When shame goes unnamed, it turns inward as self-erasure—or outward as blame, punishment, and control.</p>
-
-        <p>Communities fracture.<br>
-        Movements devour themselves.<br>
-        Power simply changes costumes.</p>
-
-        <p>Indeed, some might even say, "fuck shame." (More on that below).</p>
-
-        <p>Tending our shame interrupts these negative, toxic cycles.</p>
-
-        <p>As we learn to stay present with our own shame, we grow the capacity to stay present with discomfort, difference, and repair. We become less reactive, less brittle, less attached to false innocence or superiority. We learn how to be accountable without collapsing, and how to belong without pretending.</p>
-
-        <p>Collective freedom emerges when people can remain in relationship—<em>especially</em> when things get hard. Shame work restores that possibility.</p>
-
-        <p>It returns us to grief that has been frozen.</p>
-
-        <p>It softens identities built on fear.</p>
-
-        <p>It loosens the hold of inherited harm so it is not passed on untouched.</p>
-
-        <p>To know shame—rather than be driven by it—is to reclaim dignity. And dignity, shared and practiced, is quietly revolutionary.</p>
-
-        <h2>The full story of KnowShame—"FUCK SHAME"</h2>
+        <h2>The full story of "FUCK SHAME"</h2>
         <p>Many years back a mentor, guide, and grandfather figure of mine, Michael Sherlock, said a prayer for shame that has stuck with me. (This comes through Michael from Martin Lazoff):</p>
 
         <blockquote>
@@ -337,50 +344,35 @@
 
         <p>This is what I want to send out into the world. "People," I'm ready to scream. "It is time we move on from the shame!"</p>
 
-        <p>The profanity summons anger. Anger is action, energetic protection, safe boundaries.</p>
-
         <p>The word "fuck" for some people can help them to jump out of a frozen place and activate toward healing. And the reminder that you matter.</p>
 
         <p>"You matter!"</p>
 
-        <h2>A specific, ordinary vision</h2>
-        <p>As I've carried Martin's profane prayer around over the years I've had the same image again and again: that message everywhere, sparking conversation.</p>
+        <h2>knowshame.org is a resource hub for navigating shame</h2>
+        <p>I learned early in my journey to heal my shame that <strong>healthy shame is actually a good thing</strong>.</p>
+        <h3>What is healthy shame, you ask?</h3>
+        <p>If toxic shame says, "I'm bad," healthy shame says, "I did something bad."</p>
+        <p>At it's heart, healthy shame is a compass that orients us to our values.</p>
+        <p>As we learn to stay present with our own shame, we grow the capacity to stay present with discomfort, difference, and repair.</p> 
+        <p>We learn how to be accountable without collapsing, and how to belong without pretending.</p>
 
-        <p>On water bottles.<br>
-        On bike frames.<br>
-        On notebooks and toolboxes and coffee mugs.</p>
+        <p>Collective freedom emerges when people can remain in relationship—<em>especially</em> when things get hard. Shame work restores that possibility.</p>
 
-        <p>Friends I love pulling on soft, well-made hoodies—embroidered, not flashy—quietly and unmistakably saying:</p>
+        <p>It loosens the hold of inherited harm so it is not passed on untouched.</p>
 
-        <p><em>Fuck shame.</em><br>
-        <em>KnowShame.</em><br>
-        <em>No to shame.</em></p>
-
-        <p>A prayer you can wear.</p>
-
-        <h2>A note on healthy shame (and the difference between shame and guilt)</h2>
+        <h2>To know shame—rather than be driven by it</h2>
         <p>Healthy shame is a natural and necessary part of human development. It's the internal sense of right and wrong that helps us navigate relationships and social norms.</p>
-        <p>Guilt, on the other hand, is a feeling of remorse or regret about something we've done or failed to do. Shame and guilt can and are healthy modulators of behavior. When you're feeling one of them, it can be helpful to ask yourself what they signal. Specifically, what is my shame/guilt telling me about my values?</p>
-        <p>Toxic shame is destructive. We don't need. Fuck it, event. But healthy shame and guilt are excellent guides toward values-aligned behavior.</p>
+        <p>On a communal level, healthy shame acts like gentle bowling gutters bouncing toward the pins of our fullest light.</p>
+        <p>Toxic shame is destructive. We don't need. Fuck it. I am somebody.</p>
 
-       
-<div class="callout">
-    <h1>
-        If this resonates...
-    </h1>
-    <p>I'd like to make this real and I'd like your feedback.
-    </p>     
-    <div class="tally-embed">
-        <iframe src="https://tally.so/embed/Ek5zDq?alignLeft=1&hideTitle=1&dynamicHeight=1">
-            width="100%"
-            height="500"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="KnowShame"
-        </iframe>
-    </div>
-</div>
+        <h2>How you can help</h2>
+        <p>I'm currently in the process of designing "merch" to spread the message of healthy shame.</p>
+        <p>Part of the process means getting feedback, which is why I'm running two polls:</p>
+        <ul>
+            <li>poll for <a href="https://99designs.ca/contests/poll/fa5f5dd147">visual</a> designs</li>
+            <li>poll for <a href="https://99designs.ca/contests/poll/17314839da">typographic</a> designs</li>
+        </ul>
+        <p>You can also <a href="mailto:hi@camcarrick.com">contact me directly</a> with your input.</p>
 
 <section class="aboutme">
     <h2>About me</h2>
